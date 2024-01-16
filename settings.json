@@ -1,0 +1,29 @@
+// THIS IS A SAMPLE FILE.
+// YOU NEED TO REMOVE ALL WHITESPACES IN THIS FILE AND THE PASTE THAT IN THE VARIABLE NAMED "settings" IN THE FILE "script.js"
+// THANK YOU CORS POLICY, I LOVE YOU
+{
+    "incoming": 3,
+    "goals": [
+      {
+        "goal": 100.00,
+        "description": "Goal 1",
+        "hue": 0,
+        "img": "assets/picrew_persona.png",
+        "background": "assets/background.png"
+      },
+      {
+        "goal": 200.00,
+        "description": "Goal 2",
+        "hue": 120,
+        "img": "assets/picrew_persona.png",
+        "background": "assets/background.png"
+      },
+      {
+        "goal": 300.00,
+        "description": "Goal 3",
+        "hue": 240,
+        "img": "assets/picrew_persona.png",
+        "background": "assets/background.png"
+      }
+    ]
+  }
