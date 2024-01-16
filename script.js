@@ -100,3 +100,5 @@ function update(mone){
     // update old mone
     old_mone = mone;
 }
+
+update(0);
