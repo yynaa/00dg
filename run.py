@@ -26,7 +26,7 @@ queue = []
 def about():
     return {"message": "00dg"}
 
-@app.get("/api/goals")
+@app.get("/api/settings")
 def get_goals():
     return settings
 
