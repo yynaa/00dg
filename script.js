@@ -20,6 +20,12 @@ setTimeout(function(){
 }, 5000)
 
 function settingsFound() {
+    // check if reversed
+
+    if (settings.reversed) {
+        document.getElementById("container").style = "flex-direction: column;";
+    }
+
     // get the incoming
 
     var incoming = settings.incoming;

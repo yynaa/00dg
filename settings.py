@@ -1,5 +1,6 @@
 settings = {
     "incoming": 3,
+    "reversed": False,
     "api": {
         "ws": "ws://dev.tnevent.telecomnancy.net/ws",
         "message": { "op": 'sub', "msg": "pot" },
