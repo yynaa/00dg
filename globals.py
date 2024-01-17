@@ -1,2 +1,3 @@
 CARD_SIZE = (200*8, 200)
 CARD_SIZE_SMALL = (50*8, 50)
+

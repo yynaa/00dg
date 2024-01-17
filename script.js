@@ -1,6 +1,6 @@
 // read the json first
 
-var settings = '{"incoming":3,"goals":[{"goal":100.00,"description":"Goal 1","hue":0,"img":"assets/picrew_persona.png","background":"assets/background.png"},{"goal":200.00,"description":"Goal 2","hue":120,"img":"assets/picrew_persona.png","background":"assets/background.png"},{"goal":300.00,"description":"Goal 3","hue":240,"img":"assets/picrew_persona.png","background":"assets/background.png"}]}'
+var settings = '{"incoming":3,"goals":[{"goal":100.00,"description":"Goal 1","hue":0,"img":"assets/picrew_persona.png","background":"assets/background.png"},{"goal":200.00,"description":"Goal 2","hue":120,"img":"assets/picrew_persona.png","background":"assets/background.png"},{"goal":300.00,"description":"Goal 3","hue":240,"img":"assets/picrew_persona.png","background":"assets/background.png"},{"goal":400.00,"description":"Goal 4","hue":0,"img":"assets/picrew_persona.png","background":"assets/background.png"},{"goal":500.00,"description":"Goal 4","hue":15,"img":"assets/picrew_persona.png","background":"assets/background.png"}]}'
 
 // parse the json
 
@@ -63,6 +63,18 @@ function removeGoal(id) {
     goalElement.remove();
 }
 
+// function to remove a goal from price
+
+function removeGoalFromPrice(price) {
+    // loop through goals and remove the matching one
+    for (var i = 0; i < goals.length; i++) {
+        if (goals[i].goal == price) {
+            removeGoal(i);
+            break;
+        }
+    }
+}
+
 // function to complete the goals
 
 function completeGoal(id) {
@@ -102,3 +114,21 @@ function update(mone){
 }
 
 update(0);
+
+// get the queue
+
+function getQueue(){
+    fetch("http://localhost:9650/api/queue")
+        .then(response => response.json())
+        .then(data => {
+            let command = data.command
+            let value = data.value
+
+            if (command == "delete"){
+                removeGoalFromPrice(value)
+            }
+        })
+    }
+
+// regularly get the queue
+setInterval(getQueue, 2000)
