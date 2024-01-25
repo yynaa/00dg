@@ -95,6 +95,17 @@ function settingsFound() {
         }
     }
 
+    // function to remove all goals which have been reached
+
+    function removeAllReachedGoals(){
+        // loop through goals and remove the matching one
+        for (var i = 0; i < goals.length; i++) {
+            if (goals[i].goal < old_mone) {
+                removeGoal(i);
+            }
+        }
+    }
+
     // function to complete the goals
 
     function completeGoal(id) {
@@ -106,6 +117,10 @@ function settingsFound() {
         goalsDisplayed--;
         // set background saturation to 0
         goalElement.querySelector(".goal-bg").style.filter = "saturate(0)";
+        //if autocomplete
+        if (settings.autocomplete) {
+            removeGoal(id)
+        }
     }
 
     // updater
@@ -146,6 +161,9 @@ function settingsFound() {
 
                 if (command == "delete"){
                     removeGoalFromPrice(value)
+                }
+                if (command == "deleteall"){
+                    removeAllReachedGoals()
                 }
             })
         }

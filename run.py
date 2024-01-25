@@ -33,6 +33,11 @@ def delete(price:Annotated[str, Form()]):
     queue.append({"command": "delete", "value": price})
     return queue
 
+@app.post("/api/deleteall")
+def deleteall():
+    queue.append({"command": "deleteall", "value": "0"})
+    return queue
+
 @app.get("/api/queue")
 def get_queue():
     if len(queue) > 0:

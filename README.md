@@ -17,6 +17,7 @@ a donation goal tracker styled like the internet of the 00s
 ```pyp
 settings = {
     "incoming": 3, # how many incoming goals
+    "autocomplete": False, #if True, goals disappear when reached
     "reversed": False, # if True, goals appear at the bottom
     "api": {
         "ws": "ws://mywebsocket.xyz",

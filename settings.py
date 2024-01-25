@@ -1,5 +1,6 @@
 settings = {
     "incoming": 3, # how many incoming goals
+    "autocomplete": False, #if True, goals disappear when reached
     "reversed": False, # if True, goals appear at the bottom
     "api": {
         "ws": "ws://mywebsocket.xyz",
